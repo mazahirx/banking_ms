@@ -24,8 +24,8 @@ class Account:
     def search_account(self, acc_id):
         acc_id = input("Enter Account Number : ")
 
-        for acc_id in accounts:
-            if acc_id == accounts:
+        for acc_id in self.accounts:
+            if acc_id == self.accounts:
                 print(f"Account found ! \nUsername : {self.accounts[acc_id]} \nAccount Number : {acc_id}")
                 print(f"Balance : {self.accounts[self.balance]}")
             else:
@@ -51,3 +51,29 @@ class Account:
             self.accounts[self.acc_id] = [self.balance]
             print("Balance added successfully")
     
+def main():
+
+    a1 = Account()
+
+    print("---- BANKING ACCOUNTS ----")
+    print("1.Create Account \n2.Search Account \n3.Delete Account \n4.Add Balance \n5.Exit")
+
+    choice = int(input("Chose Option : "))
+
+    while True:
+        if choice == 1:
+            a1.create_account()
+        elif choice == 2:
+            a1.search_account()
+        elif choice == 3:
+            a1.delete_account()
+        elif choice == 4:
+            a1.add_balance()
+        elif choice == 5:
+            print("Exiting....")
+            breaking
+        else:
+            print("Choose valid option!")
+
+if __name__ == "__main__":
+    main()
