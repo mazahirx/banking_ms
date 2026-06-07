@@ -71,7 +71,7 @@ def main():
             a1.add_balance()
         elif choice == 5:
             print("Exiting....")
-            breaking
+            break
         else:
             print("Choose valid option!")
 
