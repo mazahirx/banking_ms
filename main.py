@@ -27,8 +27,10 @@ class Account:
         for acc_id in accounts:
             if acc_id == accounts:
                 print(f"Account found ! \nUsername : {self.accounts[acc_id]} \nAccount Number : {acc_id}")
+                print(f"Balance : {self.accounts[self.balance]}")
             else:
                 print("Account not found !!")
+
     #module to delete account
     def delete_account(self):
         self.acc_id = input("Enter Account Number : ")
@@ -40,5 +42,12 @@ class Account:
             else:
                 print("Account not found !!")
     
+    #module to add balance
+    def add_balance(self):
+        self.acc_id = input("Enter Account Number : ")
+        self.balance = input("Enter the amount : ")
 
-            
+        for self.acc_id in self.accounts:
+            self.accounts[self.acc_id] = [self.balance]
+            print("Balance added successfully")
+    
