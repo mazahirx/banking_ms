@@ -20,26 +20,24 @@ class Account:
         print(f"Account created successfully! \nUsername : {self.name} \nAccount Number: {self.acc_id}")
 
     #module to search account
-    def search_account(self, acc_id):
-        acc_id = input("Enter Account Number : ")
+    def search_account(self):
+        self.acc_id = input("Enter Account Number : ")
 
-        for acc_id in self.accounts:
-            if acc_id == self.accounts:
-                print(f"Account found ! \nUsername : {self.accounts[acc_id]} \nAccount Number : {acc_id}")
-                print(f"Balance : {self.accounts[self.balance]}")
-            else:
-                print("Account not found !!")
+        if self.acc_id in self.accounts:
+            print(f"Account found ! \nUsername : {self.accounts[self.acc_id]} \nAccount Number : {self.acc_id}")
+        else:
+            print("Account not found !!")
         
     #module to delete account
     def delete_account(self):
         self.acc_id = input("Enter Account Number : ")
 
-        for self.acc_id in self.accounts:
-            if self.acc_id == self.accounts:
-                self.accounts[self.acc_id] = ""
-                print("Account Deleted !")
-            else:
-                print("Account not found !!")
+        #for self.acc_id in self.accounts:
+        if self.acc_id in self.accounts:
+            del self.accounts[self.acc_id]
+            print("Account Deleted !")
+        else:
+            print("Account not found !!")
     
     #module to add balance
     def add_balance(self):
@@ -55,14 +53,17 @@ def main():
     a1 = Account("Test",25,0)
 
     print("---- BANKING ACCOUNTS ----")
-    print("1.Create Account \n2.Search Account \n3.Delete Account \n4.Add Balance \n5.Exit")
+    
 
-    choice = int(input("Chose Option : "))
 
     while True:
+        print("\n---- Welcome to the menu ----")
+        print("1.Create Account \n2.Search Account \n3.Delete Account \n4.Add Balance \n5.Exit")
+
+        choice = int(input("Chose Option : "))
+        
         if choice == 1:
             a1.create_account()
-            break
         elif choice == 2:
             a1.search_account()
         elif choice == 3:
