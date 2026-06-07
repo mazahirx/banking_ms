@@ -29,6 +29,16 @@ class Account:
                 print(f"Account found ! \nUsername : {self.accounts[acc_id]} \nAccount Number : {acc_id}")
             else:
                 print("Account not found !!")
+    #module to delete account
+    def delete_account(self):
+        self.acc_id = input("Enter Account Number : ")
+
+        for self.acc_id in self.accounts:
+            if self.acc_id == self.accounts:
+                self.accounts[self.acc_id] = ""
+                print("Account Deleted !")
+            else:
+                print("Account not found !!")
     
 
             
