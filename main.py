@@ -10,15 +10,14 @@ class Account:
         self.balance = balance
 
     #module to create account
-    def create_account(self, accounts):
-        name = input("Enter name : ")
-        characters = string.ascii_letters
-        #generate random acc_id of 5 letters
-        acc_id = "".join(random.choice(characters) for _ in range(5)) 
+    def create_account(self):
+        self.name = input("Enter name : ")
+        characters = string.digits
+        #generate random acc_id of 11 numbers
+        self.acc_id = "".join(random.choice(characters) for _ in range(11)) 
 
-        for name in accounts:
-            accounts[acc_id] = name
-            print(f"Account created successfully! \nUsername : {name} \nAccount Number: {acc_id}")
+        self.accounts[self.acc_id] = self.name
+        print(f"Account created successfully! \nUsername : {self.name} \nAccount Number: {self.acc_id}")
 
     #module to search account
     def search_account(self, acc_id):
@@ -30,7 +29,7 @@ class Account:
                 print(f"Balance : {self.accounts[self.balance]}")
             else:
                 print("Account not found !!")
-
+        
     #module to delete account
     def delete_account(self):
         self.acc_id = input("Enter Account Number : ")
@@ -53,7 +52,7 @@ class Account:
     
 def main():
 
-    a1 = Account()
+    a1 = Account("Test",25,0)
 
     print("---- BANKING ACCOUNTS ----")
     print("1.Create Account \n2.Search Account \n3.Delete Account \n4.Add Balance \n5.Exit")
@@ -63,6 +62,7 @@ def main():
     while True:
         if choice == 1:
             a1.create_account()
+            break
         elif choice == 2:
             a1.search_account()
         elif choice == 3:
