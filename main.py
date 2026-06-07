@@ -9,30 +9,29 @@ class Bank:
 
     #module to create account
     def create_account(self):
-        self.name = input("Enter name : ")
+        name = input("Enter name : ")
         characters = string.digits
         #generate random acc_id of 11 numbers
-        self.acc_id = "".join(random.choice(characters) for _ in range(11)) 
+        acc_id = "".join(random.choice(characters) for _ in range(11)) 
 
-        self.accounts[self.acc_id] = self.name
-        print(f"Account created successfully! \nUsername : {self.name} \nAccount Number: {self.acc_id}")
+        self.accounts[acc_id] = name
+        print(f"Account created successfully! \nUsername : {name} \nAccount Number: {acc_id}")
 
     #module to search account
     def search_account(self):
-        self.acc_id = input("Enter Account Number : ")
+        acc_id = input("Enter Account Number : ")
 
-        if self.acc_id in self.accounts:
-            print(f"Account found ! \nUsername : {self.accounts[self.acc_id]} \nAccount Number : {self.acc_id}")
+        if acc_id in self.accounts:
+            print(f"Account found ! \nUsername : {self.accounts[acc_id]} \nAccount Number : {acc_id}")
         else:
             print("Account not found !!")
         
     #module to delete account
     def delete_account(self):
-        self.acc_id = input("Enter Account Number : ")
+        acc_id = input("Enter Account Number : ")
 
-        #for self.acc_id in self.accounts:
-        if self.acc_id in self.accounts:
-            del self.accounts[self.acc_id]
+        if acc_id in self.accounts:
+            del self.accounts[acc_id]
             print("Account Deleted !")
         else:
             print("Account not found !!")
